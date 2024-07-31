@@ -13,6 +13,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { Textarea } from '@/components/ui/textarea'
+import Link from 'next/link'
 const Dashboard = () => {
   return (
     <div className="bg-white py-24 md:px-24 px-5 sm:py-32">
@@ -32,7 +33,7 @@ const Dashboard = () => {
                     <SheetTrigger asChild>
                         <Button>Create Chat Evaluation</Button>
                     </SheetTrigger>
-                    <SheetContent side="top">
+                    <SheetContent side="bottom">
                         <SheetHeader>
                         <SheetTitle>Create New Evaluation</SheetTitle>
                         <SheetDescription>
@@ -83,7 +84,9 @@ const Dashboard = () => {
                             <Button variant="outline">Cancel</Button>
                         </SheetClose>
                         <SheetClose asChild>
-                            <Button type="submit">Create New Evalution</Button>
+                            <Link href={'/dashboard/chat/custom-id'}>
+                                <Button type="submit">Create New Evalution</Button>
+                            </Link>
                         </SheetClose>
                         </SheetFooter>
                     </SheetContent>
@@ -92,7 +95,7 @@ const Dashboard = () => {
                     <SheetTrigger asChild>
                         <Button variant="outline">Create Audio Call Evaluation</Button>
                     </SheetTrigger>
-                    <SheetContent side="top">
+                    <SheetContent side="bottom">
                         <SheetHeader>
                         <SheetTitle>Create New Evalution Audio Call</SheetTitle>
                         <SheetDescription>
